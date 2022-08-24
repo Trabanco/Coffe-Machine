@@ -1,3 +1,5 @@
+// import java.util.Scanner;
+
 public class Cafe{
 
     private int water;
@@ -65,12 +67,12 @@ public class Cafe{
 
     @Override
     public String toString(){
-        return "\n La máquina de café tiene: \n" +
+        return "\n La maquina de cafe tiene: \n" +
             water + " ml de water\n" +
             leche + " ml de leche\n" +
-            granosCafe + " gr de granos de café\n" +
+            granosCafe + " gr de granos de cafe\n" +
             vasos + " vasos\n" +
-            "$" + dinero + "Euros de dinero\n";
+            " $ " + dinero + " Euros de dinero\n";
     }
 
 }
