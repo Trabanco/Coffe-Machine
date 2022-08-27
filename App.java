@@ -2,9 +2,8 @@ import java.util.Scanner;
 
 public class App {
 
-    static Cafe cafe = new Cafe(400, 540, 120, 10, 500);
+    static Cafe cafe = new Cafe(300, 140, 60, 4, 500);
     final static Scanner scanner = new Scanner(System.in);
-
     static void elegirCafe(){
         String elegirCafe;
         TipoCafe tipoCafe;
@@ -36,16 +35,30 @@ public class App {
 
 
         } while (tipoCafe.name().equals("NOT_FOUND"));
-
     }
 
+    
+
     static void llenarIngredientes(){
+        System.out.println("Ingresar cantidad de agua");
+        int agua = scanner.nextInt();
+        System.out.println("Ingresar cantidad de leche");
+        int leche = scanner.nextInt();
+        System.out.println("Ingresar cantidad de granos de cafe");
+        int granosCafe = scanner.nextInt();
+        System.out.println("Ingresar cantidad de vasos");
+        int vasos = scanner.nextInt();
+        cafe.llenarCafetera(agua, leche, granosCafe, vasos);
+    }    
 
 
+
+    public static void main(String[] args){
+        System.out.println(cafe.toString());
         String opcion;
         do {
             System.out.println("Escribir accion a realizar : Comprar, Llenar, Retirar, Verificar, Salir");
-            opcion = scanner.next.next();
+            opcion = scanner.next();
             switch(opcion){
                 case "Comprar" :
                 elegirCafe();
@@ -54,20 +67,22 @@ public class App {
                 llenarIngredientes();
                 break;
                 case "Retirar" :
-
+                cafe.retirarDinero();
                 break;
                 case "Verificar" :   
-
+                System.out.println(cafe.toString());
                 break;
                 case "Salir" :   
                 break;
                 default :
                 System.out.println("Opcion no valida ");
 
+            }
+        }while(!opcion.equals("salir"));
+        System.out.println(cafe.toString());
+        
 
-            }while(!opcion.equals("salir"));
-        System.out.println(cafe);
-        }
     }
+
 }
 
